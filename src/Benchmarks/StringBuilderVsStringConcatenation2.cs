@@ -4,7 +4,6 @@ using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks
 {
-    [MemoryDiagnoser]
     public class StringBuilderVsStringConcatenation2
     {
         [Params(1, 10, 100)]
