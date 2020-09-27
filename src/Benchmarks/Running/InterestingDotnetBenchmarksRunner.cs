@@ -28,7 +28,7 @@ namespace Benchmarks.Running
                 .AddDiagnoser(MemoryDiagnoser.Default)
                 .AddLogger(ConsoleLogger.Default)
                 .AddColumnProvider(DefaultColumnProviders.Instance)
-                .AddExporter(DefaultExporters.Csv, DefaultExporters.JsonFull, DefaultExporters.Markdown);
+                .AddExporter(DefaultExporters.Csv, DefaultExporters.JsonBrief, DefaultExporters.Markdown);
 
             return runAllMonikers
                 ? config
