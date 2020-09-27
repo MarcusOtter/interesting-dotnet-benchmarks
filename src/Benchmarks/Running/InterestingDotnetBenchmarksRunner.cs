@@ -13,13 +13,13 @@ namespace Benchmarks.Running
 {
     public static class InterestingDotnetBenchmarksRunner
     {
-        public static void RunBenchmarks(string[] args, bool runAllMonikers)
+        public static void RunBenchmarks(string[] args, bool runAllMonikers = false)
         {
             var config = GetConfig(runAllMonikers);
             BenchmarkSwitcher.FromAssembly(Assembly.GetExecutingAssembly()).Run(args, config);
 
             WriteClosingMessage();
-            Console.ReadKey();
+            Console.ReadLine();
         }
 
         private static IConfig GetConfig(bool runAllMonikers)
@@ -42,9 +42,10 @@ namespace Benchmarks.Running
         private static void WriteClosingMessage()
         {
             Console.WriteLine();
+            Console.WriteLine("--------------------------------------------------------------");
             Console.WriteLine("Your interesting benchmarks have finished running.");
             Console.WriteLine("Make sure to open a pull request with your results! :)");
-            Console.WriteLine("Press any key to terminate the program.");
+            Console.WriteLine("Press ENTER to terminate the program.");
         }
     }
 }
